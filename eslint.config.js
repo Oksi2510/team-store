@@ -5,12 +5,12 @@ import globals from 'globals';
 import prettier from 'eslint-config-prettier';
 
 export default defineConfig([
-    {
-        files: ['**/*.{js,ts}'],
-        extends: [js.configs.recommended, tseslint.configs.recommended],
-        languageOptions: {
-            globals: globals.browser,
-        },
+  {
+    files: ['**/*.{js,ts}'],
+    extends: [js.configs.recommended, tseslint.configs.recommended],
+    languageOptions: {
+      globals: globals.browser,
     },
-    prettier,
+  },
+  prettier,
 ]);

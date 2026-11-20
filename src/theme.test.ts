@@ -13,4 +13,10 @@ describe('getInitialTheme', () => {
 
     expect(result).toBe('dark');
   });
+
+  it('использует сохранённую тему, даже если системная другая', () => {
+    const result = getInitialTheme('dark', false);
+
+    expect(result).toBe('dark');
+  });
 });

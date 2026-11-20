@@ -1,4 +1,4 @@
-interface FilterableMeme {
+export interface FilterableMeme {
   title: string;
   categories: string[];
 }

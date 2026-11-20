@@ -17,4 +17,12 @@ describe('filterMemes', () => {
 
     expect(result).toEqual([{ title: 'Ждун' }]);
   });
+
+  it('находит мем независимо от регистра', () => {
+    const memes = [{ title: 'Пепе' }, { title: 'Ждун' }];
+
+    const result = filterMemes(memes, 'ждун');
+
+    expect(result).toEqual([{ title: 'Ждун' }]);
+  });
 });

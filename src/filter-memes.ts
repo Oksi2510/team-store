@@ -3,9 +3,10 @@ interface FilterableMeme {
 }
 
 export function filterMemes(memes: FilterableMeme[], query: string): FilterableMeme[] {
-  if (query === '') {
+  const normalizedQuery = query.toLowerCase();
+  if (normalizedQuery === '') {
     return memes;
   }
 
-  return memes.filter((meme) => meme.title.includes(query));
+  return memes.filter((meme) => meme.title.toLowerCase().includes(normalizedQuery));
 }

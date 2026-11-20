@@ -2,8 +2,12 @@ interface FilterableMeme {
   title: string;
 }
 
-export function filterMemes(memes: FilterableMeme[], query: string): FilterableMeme[] {
-  const normalizedQuery = query.toLowerCase();
+interface MemeFilters {
+  query: string;
+}
+
+export function filterMemes(memes: FilterableMeme[], filters: MemeFilters): FilterableMeme[] {
+  const normalizedQuery = filters.query.toLowerCase();
   if (normalizedQuery === '') {
     return memes;
   }

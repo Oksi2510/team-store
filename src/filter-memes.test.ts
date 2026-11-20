@@ -5,7 +5,7 @@ describe('filterMemes', () => {
   it('возвращает все мемы, если запрос пустой', () => {
     const memes = [{ title: 'Пепе' }, { title: 'Ждун' }];
 
-    const result = filterMemes(memes, '');
+    const result = filterMemes(memes, { query: '' });
 
     expect(result).toEqual(memes);
   });
@@ -13,7 +13,7 @@ describe('filterMemes', () => {
   it('находит мем по части названия', () => {
     const memes = [{ title: 'Пепе' }, { title: 'Ждун' }];
 
-    const result = filterMemes(memes, 'дун');
+    const result = filterMemes(memes, { query: 'дун' });
 
     expect(result).toEqual([{ title: 'Ждун' }]);
   });
@@ -21,7 +21,7 @@ describe('filterMemes', () => {
   it('находит мем независимо от регистра', () => {
     const memes = [{ title: 'Пепе' }, { title: 'Ждун' }];
 
-    const result = filterMemes(memes, 'ждун');
+    const result = filterMemes(memes, { query: 'ждун' });
 
     expect(result).toEqual([{ title: 'Ждун' }]);
   });

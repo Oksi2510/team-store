@@ -19,4 +19,10 @@ describe('getInitialTheme', () => {
 
     expect(result).toBe('dark');
   });
+
+  it('игнорирует неизсветное значение в хранилище', () => {
+    const result = getInitialTheme('blue', true);
+
+    expect(result).toBe('dark');
+  });
 });

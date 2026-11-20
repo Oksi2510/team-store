@@ -45,4 +45,21 @@ describe('filterMemes', () => {
 
     expect(result).toEqual([memes[1]]);
   });
+
+  it('возвращает пустой массив, если ничего не найдено', () => {
+    const memes = [
+      { title: 'Пепе', categories: ['классика'] },
+      { title: 'Ждун', categories: ['добрые'] },
+    ];
+
+    const result = filterMemes(memes, { query: 'сладкийбубалех', category: 'почтисладкийбубалех' });
+
+    expect(result).toEqual([]);
+  });
+
+  it('возвращает пустой массив для пустого списка мемов', () => {
+    const result = filterMemes([], { query: '', category: 'животные' });
+
+    expect(result).toEqual([]);
+  });
 });

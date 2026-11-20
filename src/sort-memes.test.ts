@@ -27,4 +27,16 @@ describe('sortMemes', () => {
 
     expect(memes.map((meme) => meme.title)).toEqual(orderBefore);
   });
+
+  it('сортируем мемы по названию по убыванию', () => {
+    const memes = [
+      { title: 'Ждун', categories: ['добрые'] },
+      { title: 'Пепе', categories: ['классика'] },
+      { title: 'Абсолют', categories: ['классика'] },
+    ];
+
+    const result = sortMemes(memes, 'title-desc');
+
+    expect(result.map((meme) => meme.title)).toEqual(['Пепе', 'Ждун', 'Абсолют']);
+  });
 });

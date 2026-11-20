@@ -7,4 +7,10 @@ describe('getInitialTheme', () => {
 
     expect(result).toBe('light');
   });
+
+  it('возвращает dark, если сохранённой темы нет и система тёмная', () => {
+    const result = getInitialTheme(null, true);
+
+    expect(result).toBe('dark');
+  });
 });

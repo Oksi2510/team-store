@@ -7,5 +7,5 @@ export function filterMemes(memes: FilterableMeme[], query: string): FilterableM
     return memes;
   }
 
-  return memes.filter((meme) => meme.title === query);
+  return memes.filter((meme) => meme.title.includes(query));
 }

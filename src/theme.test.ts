@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getInitialTheme } from './theme';
+import { getInitialTheme, toggleTheme } from './theme';
 
 describe('getInitialTheme', () => {
   it('возвращает light, если сохранённой темы нет и система светлая', () => {
@@ -20,9 +20,23 @@ describe('getInitialTheme', () => {
     expect(result).toBe('dark');
   });
 
-  it('игнорирует неизсветное значение в хранилище', () => {
+  it('игнорирует неизвестное значение в хранилище', () => {
     const result = getInitialTheme('blue', true);
 
     expect(result).toBe('dark');
+  });
+});
+
+describe('toggleTheme', () => {
+  it('переключает светлую тему на тёмную', () => {
+    const result = toggleTheme('light');
+
+    expect(result).toBe('dark');
+  });
+
+  it('переключает тёмную тему на светлую', () => {
+    const result = toggleTheme('dark');
+
+    expect(result).toBe('light');
   });
 });

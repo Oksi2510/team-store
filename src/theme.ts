@@ -7,3 +7,10 @@ export function getInitialTheme(stored: string | null, prefersDark: boolean): Th
 
   return prefersDark ? 'dark' : 'light';
 }
+
+export function toggleTheme(theme: Theme): Theme {
+  if (theme === 'light') {
+    return 'dark';
+  }
+  return 'light';
+}

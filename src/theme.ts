@@ -14,3 +14,7 @@ export function toggleTheme(theme: Theme): Theme {
   }
   return 'light';
 }
+
+export function applyTheme(theme: Theme, root: HTMLElement = document.documentElement): void {
+  root.dataset.theme = theme;
+}

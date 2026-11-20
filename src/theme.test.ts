@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getInitialTheme, toggleTheme } from './theme';
+import { applyTheme, getInitialTheme, toggleTheme } from './theme';
 
 describe('getInitialTheme', () => {
   it('возвращает light, если сохранённой темы нет и система светлая', () => {
@@ -38,5 +38,24 @@ describe('toggleTheme', () => {
     const result = toggleTheme('dark');
 
     expect(result).toBe('light');
+  });
+});
+
+describe('applyTheme', () => {
+  it('ставит выбранную тему в data-theme', () => {
+    const root = { dataset: {} } as HTMLElement;
+
+    applyTheme('dark', root);
+
+    expect(root.dataset.theme).toBe('dark');
+  });
+
+  it('перезаписывает тему при повторном вызове', () => {
+    const root = { dataset: {} } as HTMLElement;
+
+    applyTheme('dark', root);
+    applyTheme('light', root);
+
+    expect(root.dataset.theme).toBe('light');
   });
 });

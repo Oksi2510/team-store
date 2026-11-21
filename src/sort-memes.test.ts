@@ -4,9 +4,9 @@ import { sortMemes } from './sort-memes';
 describe('sortMemes', () => {
   it('сортирует мемы по названию по возрастанию', () => {
     const memes = [
-      { title: 'Ждун', categories: ['добрые'] },
-      { title: 'Пепе', categories: ['классика'] },
-      { title: 'Абсолют', categories: ['классика'] },
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
     ];
 
     const result = sortMemes(memes, 'title-asc');
@@ -16,9 +16,9 @@ describe('sortMemes', () => {
 
   it('не меняет порядок исходного массива', () => {
     const memes = [
-      { title: 'Ждун', categories: ['добрые'] },
-      { title: 'Пепе', categories: ['классика'] },
-      { title: 'Абсолют', categories: ['классика'] },
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
     ];
 
     const orderBefore = memes.map((meme) => meme.title);
@@ -30,9 +30,9 @@ describe('sortMemes', () => {
 
   it('сортируем мемы по названию по убыванию', () => {
     const memes = [
-      { title: 'Ждун', categories: ['добрые'] },
-      { title: 'Пепе', categories: ['классика'] },
-      { title: 'Абсолют', categories: ['классика'] },
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
     ];
 
     const result = sortMemes(memes, 'title-desc');

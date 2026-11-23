@@ -43,7 +43,7 @@ describe('toggleTheme', () => {
 
 describe('applyTheme', () => {
   it('ставит выбранную тему в data-theme', () => {
-    const root = { dataset: {} } as HTMLElement;
+    const root = document.createElement('div');
 
     applyTheme('dark', root);
 
@@ -51,7 +51,7 @@ describe('applyTheme', () => {
   });
 
   it('перезаписывает тему при повторном вызове', () => {
-    const root = { dataset: {} } as HTMLElement;
+    const root = document.createElement('div');
 
     applyTheme('dark', root);
     applyTheme('light', root);

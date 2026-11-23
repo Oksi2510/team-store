@@ -58,4 +58,12 @@ describe('applyTheme', () => {
 
     expect(root.dataset.theme).toBe('light');
   });
+
+  it('по умолчанию пишет тему на <html>', () => {
+    applyTheme('dark');
+
+    expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+
+    document.documentElement.removeAttribute('data-theme');
+  });
 });

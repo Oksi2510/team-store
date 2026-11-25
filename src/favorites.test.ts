@@ -13,4 +13,16 @@ describe('toggleFavorite', () => {
 
     expect(result).toEqual([3, 7]);
   });
+
+  it('возвращает пустой массив, когда убрали единственный id', () => {
+    const result = toggleFavorite([5], 5);
+
+    expect(result).toEqual([]);
+  });
+
+  it('не меняет исходный массив', () => {
+    const favorites = [3, 5, 7];
+
+    expect(favorites).toEqual([3, 5, 7]);
+  });
 });

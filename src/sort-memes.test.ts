@@ -1,0 +1,42 @@
+import { expect, describe, it } from 'vitest';
+import { sortMemes } from './sort-memes';
+
+describe('sortMemes', () => {
+  it('сортирует мемы по названию по возрастанию', () => {
+    const memes = [
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
+    ];
+
+    const result = sortMemes(memes, 'title-asc');
+
+    expect(result.map((meme) => meme.title)).toEqual(['Абсолют', 'Ждун', 'Пепе']);
+  });
+
+  it('не меняет порядок исходного массива', () => {
+    const memes = [
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
+    ];
+
+    const orderBefore = memes.map((meme) => meme.title);
+
+    sortMemes(memes, 'title-asc');
+
+    expect(memes.map((meme) => meme.title)).toEqual(orderBefore);
+  });
+
+  it('сортируем мемы по названию по убыванию', () => {
+    const memes = [
+      { title: 'Ждун', tags: ['добрые'] },
+      { title: 'Пепе', tags: ['классика'] },
+      { title: 'Абсолют', tags: ['классика'] },
+    ];
+
+    const result = sortMemes(memes, 'title-desc');
+
+    expect(result.map((meme) => meme.title)).toEqual(['Пепе', 'Ждун', 'Абсолют']);
+  });
+});

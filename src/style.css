@@ -7,7 +7,20 @@
   --color-on-accent: #1a1c1e;
   --color-link: #0063cc;
   --color-border: #e5e8eb;
+  color-scheme: light;
   --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #151515;
+  --color-surface: #1f1f1f;
+  --color-text: #e6e6e6;
+  --color-text-muted: #9a9a9a;
+  --color-accent: #ffda1f;
+  --color-on-accent: #1a1c1e;
+  --color-link: #4e8fe6;
+  --color-border: #303030;
+  color-scheme: dark;
 }
 
 *,
@@ -56,4 +69,14 @@ img {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 16px;
+}
+
+.theme-toggle {
+  margin: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
 }

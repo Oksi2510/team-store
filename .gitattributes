@@ -1,0 +1,3 @@
+# Текстовые файлы — LF и в репозитории, и на диске.
+# CRLF в рабочей копии ломает `npm run format:check` (шаг в CI), см. .editorconfig.
+* text=auto eol=lf

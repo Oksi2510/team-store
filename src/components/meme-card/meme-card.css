@@ -13,7 +13,7 @@
 
 .meme-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  box-shadow: 0 4px 2px var(--color-text-muted);
 }
 
 .meme-card__image {

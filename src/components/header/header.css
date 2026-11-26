@@ -1,0 +1,76 @@
+.header {
+  width: 100%;
+  padding: 16px 0;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-main);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  color: var(--color-text);
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__link {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header__link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.header__link.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* TODO Подчёркивание активной страницы через класс active (его нужно будет назначать из роутера) */
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgba(185, 165, 165, 0.46);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 16px;
+  }
+
+  .header__logo {
+    font-size: 20px;
+  }
+
+  .header__navigation {
+    gap: 12px;
+  }
+
+  .header__link {
+    font-size: 13px;
+  }
+}

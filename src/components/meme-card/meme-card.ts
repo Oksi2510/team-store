@@ -2,6 +2,7 @@ import ElementHtml from '../../utility/element-html';
 import './meme-card.css';
 
 interface MemeCardData {
+  id: number;
   image: string;
   title: string;
   tags: string[];

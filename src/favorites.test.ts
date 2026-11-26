@@ -22,7 +22,7 @@ describe('toggleFavorite', () => {
 
   it('не меняет исходный массив', () => {
     const favorites = [3, 5, 7];
-
+    toggleFavorite(favorites, 5);
     expect(favorites).toEqual([3, 5, 7]);
   });
 });

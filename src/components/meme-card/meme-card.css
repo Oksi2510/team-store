@@ -1,0 +1,61 @@
+.meme-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  max-width: 300px;
+  margin: 15px;
+  padding: 15px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.meme-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 2px var(--color-text-muted);
+}
+
+.meme-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.meme-card__content {
+  padding: 12px;
+}
+
+.meme-card__title {
+  margin-bottom: 8px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.meme-card__metadata {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.meme-card__tag {
+  padding: 2px 7px;
+  border-radius: 4px;
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+.meme-card__year {
+  color: var(--color-text-muted);
+}
+
+.meme-card__separator {
+  margin: 0 5px;
+}

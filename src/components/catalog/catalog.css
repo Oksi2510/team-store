@@ -65,6 +65,9 @@
   background-color: var(--color-accent);
   color: #000;
 }
+.catalog__tag--active:hover {
+  background-color: var(--color-accent);
+}
 
 .catalog__more-tags {
   padding: 4px 10px;

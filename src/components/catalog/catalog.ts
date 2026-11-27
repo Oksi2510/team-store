@@ -25,39 +25,15 @@ export default function createCatalog(): HTMLElement {
 
   const tagNames = ['Все', ...new Set(memes.flatMap((meme) => meme.tags))];
 
-  const visibleTagsCount = 7;
-  let isExpanded = false;
+  tagNames.forEach((tag, index) => {
+    const tagElement = new ElementHtml(
+      'span',
+      index === 0 ? ['catalog__tag', 'catalog__tag--active'] : 'catalog__tag',
+      tag
+    );
 
-  const tagElements = tagNames.map((tag, index) => {
-    return new ElementHtml('span', index === 0 ? ['catalog__tag', 'catalog__tag--active'] : 'catalog__tag', tag);
+    tags.appendChildNode(tagElement);
   });
-
-  const renderTags = () => {
-    tags.getHtmlElement().replaceChildren();
-
-    const visibleTags = isExpanded ? tagElements : tagElements.slice(0, visibleTagsCount);
-
-    visibleTags.forEach((tag) => {
-      tags.appendChildNode(tag);
-    });
-  };
-
-  renderTags();
-
-  if (tagElements.length > visibleTagsCount) {
-    const toggleButton = new ElementHtml('button', 'catalog__more-tags', 'Ещё');
-
-    toggleButton.getHtmlElement().type = 'button';
-
-    toggleButton.addEventListener('click', () => {
-      isExpanded = !isExpanded;
-      toggleButton.setTextContent(isExpanded ? 'Скрыть' : 'Ещё');
-      renderTags();
-      tags.appendChildNode(toggleButton);
-    });
-
-    tags.appendChildNode(toggleButton);
-  }
 
   const list = new ElementHtml('div', 'catalog__list');
 

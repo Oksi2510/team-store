@@ -1,7 +1,7 @@
 import ElementHtml from '../../utility/element-html';
 import './meme-card.css';
 
-interface MemeCardData {
+export interface MemeCardData {
   id: number;
   image: string;
   title: string;

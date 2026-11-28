@@ -1,5 +1,5 @@
 import { expect, describe, it } from 'vitest';
-import { toggleFavorite } from './favorites';
+import { toggleFavorite, getFavoritesKey } from './favorites';
 
 describe('toggleFavorite', () => {
   it('добавляет id в пустой список', () => {
@@ -24,5 +24,15 @@ describe('toggleFavorite', () => {
     const favorites = [3, 5, 7];
     toggleFavorite(favorites, 5);
     expect(favorites).toEqual([3, 5, 7]);
+  });
+});
+
+describe('getFavoritesKey', () => {
+  it('собирает ключ из имени пользователя', () => {
+    expect(getFavoritesKey('Ким')).toBe('favorites:Ким');
+  });
+
+  it('обрезает пробелы по краям имени', () => {
+    expect(getFavoritesKey('  Ким  ')).toBe('favorites:Ким');
   });
 });

@@ -4,3 +4,7 @@ export function toggleFavorite(favoriteIds: number[], id: number): number[] {
   }
   return [...favoriteIds, id];
 }
+
+export function getFavoritesKey(userName: string): string {
+  return `favorites:${userName.trim()}`;
+}

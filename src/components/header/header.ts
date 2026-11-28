@@ -1,6 +1,6 @@
 import ElementHtml from '../../utility/element-html';
 import './header.css';
-import { applyTheme, THEME_STORAGE_KEY, getInitialTheme, toggleTheme } from '../../theme';
+import { applyTheme, THEME_STORAGE_KEY, getInitialTheme, toggleTheme } from '../../services/theme';
 
 export default function createHeader(): HTMLElement {
   const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);

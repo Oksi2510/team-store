@@ -1,16 +1,12 @@
-export interface FilterableMeme {
-  title: string;
-  tags: string[];
-}
-
 interface MemeFilters {
   query: string;
   tag: string;
 }
 
-export function filterMemes(memes: FilterableMeme[], filters: MemeFilters): FilterableMeme[] {
+export function filterMemes<T extends { title: string; tags: string[] }>(memes: T[], filters: MemeFilters): T[] {
   const normalizedQuery = filters.query.toLowerCase();
   const noTagSelected = filters.tag === '';
+
   if (normalizedQuery === '' && noTagSelected) {
     return memes;
   }

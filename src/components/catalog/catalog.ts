@@ -1,8 +1,17 @@
 import ElementHtml from '../../utility/element-html';
 import './catalog.css';
 import memes from '../../data/memes.json';
+import type { Meme } from '../../types/meme';
 
-export default function createCatalog(): HTMLElement {
+interface CatalogElements {
+  element: HTMLElement;
+  search: HTMLInputElement;
+  tags: HTMLElement;
+  list: HTMLElement;
+  memes: Meme[];
+}
+
+export default function createCatalog(): CatalogElements {
   const catalog = new ElementHtml('section', 'catalog');
 
   const header = new ElementHtml('header', 'catalog__header');
@@ -47,5 +56,11 @@ export default function createCatalog(): HTMLElement {
   catalog.appendChildNode(filters);
   catalog.appendChildNode(list);
 
-  return catalog.getHtmlElement();
+  return {
+    element: catalog.getHtmlElement(),
+    search: search.getHtmlElement(),
+    tags: tags.getHtmlElement(),
+    list: list.getHtmlElement(),
+    memes,
+  };
 }

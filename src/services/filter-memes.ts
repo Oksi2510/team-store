@@ -1,4 +1,4 @@
-interface MemeFilters {
+export interface MemeFilters {
   query: string;
   tag: string;
 }

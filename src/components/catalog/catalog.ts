@@ -2,6 +2,7 @@ import ElementHtml from '../../utility/element-html';
 import './catalog.css';
 import memes from '../../data/memes.json';
 import type { Meme } from '../../types/meme';
+import createCatalogController from '../../controllers/catalog-controller';
 
 interface CatalogElements {
   element: HTMLElement;
@@ -55,6 +56,13 @@ export default function createCatalog(): CatalogElements {
   catalog.appendChildNode(header);
   catalog.appendChildNode(filters);
   catalog.appendChildNode(list);
+
+  createCatalogController({
+    searchInput: search.getHtmlElement(),
+    tagsContainer: tags.getHtmlElement(),
+    memeListContainer: list.getHtmlElement(),
+    memes,
+  });
 
   return {
     element: catalog.getHtmlElement(),
